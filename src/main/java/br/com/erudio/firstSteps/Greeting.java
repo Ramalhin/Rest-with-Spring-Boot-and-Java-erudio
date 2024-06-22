@@ -1,4 +1,4 @@
-package br.com.erudio.demo;
+package br.com.erudio.firstSteps;
 
 public class Greeting {
 
