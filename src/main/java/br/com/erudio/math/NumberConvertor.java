@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-public class MathController{
+public class NumberConvertor {
 
     public static Double covertToDouble(String strNumber) {
         if (strNumber == null) return 0D; 
