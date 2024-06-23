@@ -1,4 +1,4 @@
-package br.com.erudio.exceptions;
+package br.com.erudio.firstSteps.exceptions;
 
 import java.util.Date;
 import java.io.Serializable;

@@ -1,6 +1,6 @@
 package br.com.erudio.firstSteps.mathAndGreeting.controllers;
 
-import br.com.erudio.exceptions.UnsupportedMathOperationException;
+import br.com.erudio.firstSteps.exceptions.UnsupportedMathOperationException;
 import br.com.erudio.firstSteps.mathAndGreeting.Calculations;
 import br.com.erudio.firstSteps.mathAndGreeting.NumberConvertor;
 import org.springframework.web.bind.annotation.PathVariable;

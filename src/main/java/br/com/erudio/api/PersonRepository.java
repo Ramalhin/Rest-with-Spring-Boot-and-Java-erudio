@@ -1,7 +1,7 @@
-package br.com.erudio;
+package br.com.erudio.api;
 
 
-import br.com.erudio.model.Person;
+import br.com.erudio.api.model.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
