@@ -1,4 +1,4 @@
-package br.com.erudio.math.controllers;
+package br.com.erudio.model.controller;
 
 import br.com.erudio.model.Person;
 import br.com.erudio.services.PersonServices;

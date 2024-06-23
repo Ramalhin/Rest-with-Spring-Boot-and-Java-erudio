@@ -1,4 +1,4 @@
-package br.com.erudio.math;
+package br.com.erudio.firstSteps.mathAndGreeting;
 
 public class Calculations extends NumberConvertor {
 
