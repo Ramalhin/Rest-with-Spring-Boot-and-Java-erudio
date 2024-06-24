@@ -1,6 +1,6 @@
 package br.com.erudio.firstSteps.mathAndGreeting.controllers;
 
-import br.com.erudio.firstSteps.exceptions.UnsupportedMathOperationException;
+import br.com.erudio.api.exceptions.ResourceNotFoundException;
 import br.com.erudio.firstSteps.mathAndGreeting.Calculations;
 import br.com.erudio.firstSteps.mathAndGreeting.NumberConvertor;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +17,7 @@ public class MathController{
     public Double soma(@PathVariable("numberOne") String numberOne,
                        @PathVariable("numberTwo") String numberTwo) throws Exception {
         if (!NumberConvertor.isNumeric(numberOne) || !NumberConvertor.isNumeric(numberTwo)) {
-            throw new UnsupportedMathOperationException("please set a numeric value");
+            throw new ResourceNotFoundException("please set a numeric value");
         }
         return calc.soma(NumberConvertor.covertToDouble(numberOne), NumberConvertor.covertToDouble(numberTwo));
     }
@@ -26,7 +26,7 @@ public class MathController{
     public Double sub(@PathVariable("numberOne") String numberOne,
                       @PathVariable("numberTwo") String numberTwo) throws Exception {
         if (!NumberConvertor.isNumeric(numberOne) || !NumberConvertor.isNumeric(numberTwo)) {
-            throw new UnsupportedMathOperationException("please set a numeric value");
+            throw new ResourceNotFoundException("please set a numeric value");
         }
         return calc.sub(NumberConvertor.covertToDouble(numberOne), NumberConvertor.covertToDouble(numberTwo)) ;
     }
@@ -35,7 +35,7 @@ public class MathController{
     public Double div(@PathVariable("numberOne") String numberOne,
                       @PathVariable("numberTwo") String numberTwo) throws Exception {
         if (!NumberConvertor.isNumeric(numberOne) || !NumberConvertor.isNumeric(numberTwo)) {
-            throw new UnsupportedMathOperationException("please set a numeric value");
+            throw new ResourceNotFoundException("please set a numeric value");
         }
         return calc.div(NumberConvertor.covertToDouble(numberOne), NumberConvertor.covertToDouble(numberTwo));
     }
@@ -44,7 +44,7 @@ public class MathController{
     public Double mult(@PathVariable("numberOne") String numberOne,
                        @PathVariable("numberTwo") String numberTwo) throws Exception {
         if (!NumberConvertor.isNumeric(numberOne) || !NumberConvertor.isNumeric(numberTwo)) {
-            throw new UnsupportedMathOperationException("please set a numeric value");
+            throw new ResourceNotFoundException("please set a numeric value");
         }
         return calc.mult(NumberConvertor.covertToDouble(numberOne), NumberConvertor.covertToDouble(numberTwo));
     }
@@ -53,7 +53,7 @@ public class MathController{
     public Double med(@PathVariable("numberOne") String numberOne,
                       @PathVariable("numberTwo") String numberTwo) throws Exception {
         if (!NumberConvertor.isNumeric(numberOne) || !NumberConvertor.isNumeric(numberTwo)) {
-            throw new UnsupportedMathOperationException("please set a numeric value");
+            throw new ResourceNotFoundException("please set a numeric value");
         }
         return calc.med(NumberConvertor.covertToDouble(numberOne), NumberConvertor.covertToDouble(numberTwo));
     }
@@ -62,7 +62,7 @@ public class MathController{
     public Double raiz(@PathVariable("numberOne") String numberOne
     ) throws Exception {
         if (!NumberConvertor.isNumeric(numberOne)) {
-            throw new UnsupportedMathOperationException("please set a numeric value");
+            throw new ResourceNotFoundException("please set a numeric value");
         }
         return calc.raiz(NumberConvertor.covertToDouble(numberOne));
     }

@@ -1,8 +1,8 @@
-package br.com.erudio.firstSteps.exceptions.handler;
+package br.com.erudio.api.exceptions.handler;
 
 
-import br.com.erudio.firstSteps.exceptions.ExceptionResponse;
-import br.com.erudio.firstSteps.exceptions.UnsupportedMathOperationException;
+import br.com.erudio.api.exceptions.ExceptionResponse;
+import br.com.erudio.api.exceptions.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -24,11 +24,11 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
         return new ResponseEntity<>(exceptionResponse, HttpStatus.INTERNAL_SERVER_ERROR);
    
     }
-    @ExceptionHandler(UnsupportedMathOperationException.class)
-    public final ResponseEntity<ExceptionResponse> handleBadRequestExceptions(Exception ex, WebRequest request){
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public final ResponseEntity<ExceptionResponse> handleNotFoundExceptions(Exception ex, WebRequest request){
         ExceptionResponse ExceptionResponse = new ExceptionResponse(new Date(), ex.getMessage(), request.getDescription(false));
    
-        return new ResponseEntity<>(ExceptionResponse, HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(ExceptionResponse, HttpStatus.NOT_FOUND);
    
     }
 }
