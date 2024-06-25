@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/person")
+@RequestMapping("/person/api/v1")
 public class PersonController {
 
     @Autowired
@@ -41,7 +41,7 @@ public class PersonController {
     @PostMapping(value = "v2", consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public PersonVOV2 createv2(@RequestBody PersonVOV2 person) {
-        return service.create(person);
+        return service.createv2(person);
     }
 
 
