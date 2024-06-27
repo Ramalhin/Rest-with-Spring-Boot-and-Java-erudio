@@ -2,18 +2,22 @@ package br.com.erudio.api.data.vo.v1;
 
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.github.dozermapper.core.Mapping;
+import org.springframework.hateoas.RepresentationModel;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 @JsonPropertyOrder({"id","firstname","lastname","adress","gender"})
-public class PersonVO implements Serializable {
+public class PersonVO extends RepresentationModel<PersonVO> implements Serializable {
 
     private static final long SerialVersionUID = 1L;
 
-
-    private long id;
+    @JsonProperty("id")
+    @Mapping("id")
+    private long key;
     private String firstName;
     private String lastName;
     private String adress;
@@ -36,11 +40,11 @@ public class PersonVO implements Serializable {
         this.gender = gender;
     }
 
-    public long getId() {
-        return id;
+    public long getKey() {
+        return key;
     }
-    public void setId(long id) {
-        this.id = id;
+    public void setKey(long key) {
+        this.key = key;
     }
 
     public String getFirstName() {
@@ -62,11 +66,14 @@ public class PersonVO implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PersonVO personVO = (PersonVO) o;
-        return id == personVO.id && Objects.equals(firstName, personVO.firstName) && Objects.equals(lastName, personVO.lastName) && Objects.equals(adress, personVO.adress) && Objects.equals(gender, personVO.gender);
+        return key == personVO.key && Objects.equals(firstName, personVO.firstName)
+                && Objects.equals(lastName, personVO.lastName)
+                && Objects.equals(adress, personVO.adress)
+                && Objects.equals(gender, personVO.gender);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName, adress, gender);
+        return Objects.hash(key, firstName, lastName, adress, gender);
     }
 }

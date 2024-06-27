@@ -2,7 +2,7 @@ package br.com.erudio.api.model.controller;
 
 
 import br.com.erudio.api.data.vo.v2.PersonVOV2;
-import br.com.erudio.api.services.PersonServices;
+import br.com.erudio.api.unittests.mockito.services.PersonServices;
 import br.com.erudio.api.data.vo.v1.PersonVO;
 import br.com.erudio.api.util.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
