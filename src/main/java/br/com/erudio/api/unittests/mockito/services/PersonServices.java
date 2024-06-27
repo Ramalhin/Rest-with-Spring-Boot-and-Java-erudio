@@ -2,6 +2,7 @@ package br.com.erudio.api.unittests.mockito.services;
 
 import br.com.erudio.api.PersonRepository;
 import br.com.erudio.api.data.vo.v2.PersonVOV2;
+import br.com.erudio.api.exceptions.RequiredObjectsIsNullException;
 import br.com.erudio.api.exceptions.ResourceNotFoundException;
 import br.com.erudio.api.mapper.DozerMapper;
 import br.com.erudio.api.mapper.custom.PersonMapper;
@@ -56,10 +57,11 @@ public class PersonServices {
 
     public PersonVO update(PersonVO person) {
 
+        if(person == null)throw new RequiredObjectsIsNullException();
         logger.info("Updating one person");
+
         var entity = repository.findById(person.getKey())
                 .orElseThrow(() -> new ResourceNotFoundException("No record found for this id"));
-
 
         entity.setFirstName(person.getFirstName());
         entity.setLastName(person.getLastName());
@@ -72,7 +74,8 @@ public class PersonServices {
     }
 
 
-        public void delete(Long id) {
+
+    public void delete(Long id) {
 
         logger.info("Deleting one person");
 
