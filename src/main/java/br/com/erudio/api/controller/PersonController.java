@@ -1,4 +1,4 @@
-package br.com.erudio.api.model.controller;
+package br.com.erudio.api.controller;
 
 
 import br.com.erudio.api.data.vo.v2.PersonVOV2;

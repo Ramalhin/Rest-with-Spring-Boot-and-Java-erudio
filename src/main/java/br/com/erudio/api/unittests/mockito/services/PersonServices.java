@@ -1,6 +1,6 @@
 package br.com.erudio.api.unittests.mockito.services;
 
-import br.com.erudio.api.PersonRepository;
+import br.com.erudio.api.repository.PersonRepository;
 import br.com.erudio.api.data.vo.v2.PersonVOV2;
 import br.com.erudio.api.exceptions.RequiredObjectsIsNullException;
 import br.com.erudio.api.exceptions.ResourceNotFoundException;
@@ -8,7 +8,7 @@ import br.com.erudio.api.mapper.DozerMapper;
 import br.com.erudio.api.mapper.custom.PersonMapper;
 import br.com.erudio.api.model.Person;
 import br.com.erudio.api.data.vo.v1.PersonVO;
-import br.com.erudio.api.model.controller.PersonController;
+import br.com.erudio.api.controller.PersonController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

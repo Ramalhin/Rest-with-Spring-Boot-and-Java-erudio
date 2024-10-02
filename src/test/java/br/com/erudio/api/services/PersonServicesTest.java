@@ -1,6 +1,6 @@
 package br.com.erudio.api.services;
 
-import br.com.erudio.api.PersonRepository;
+import br.com.erudio.api.repository.PersonRepository;
 import br.com.erudio.api.data.vo.v1.PersonVO;
 import br.com.erudio.api.exceptions.RequiredObjectsIsNullException;
 import br.com.erudio.api.model.Person;
@@ -16,7 +16,6 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
